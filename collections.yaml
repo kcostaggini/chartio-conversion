@@ -1,0 +1,393 @@
+lrng:
+    badge:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - org_id:
+          :source: orgId
+          :type: TEXT
+        - name: TEXT
+        - slug: TEXT
+        - description: TEXT
+        - national: BOOLEAN
+        - interest: TEXT
+        - status: TEXT
+        - workforce_competency:
+          :source: workforceCompetency
+          :type: TEXT
+        - participation_level:
+          :source: participationLevel
+          :type: TEXT
+        - criteria: TEXT
+        - opportunity: JSON
+        - audience_min_age:
+          :source: audience.minAge
+          :type: INT
+        - audience_max_age:
+          :source: audience.maxAge
+          :type: INT
+        - audience_safe_search:
+          :source: audience.safeSearch
+          :type: BOOLEAN
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: badges
+    badgeAssertion:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - name: TEXT
+        - uid: TEXT
+        - notification_deferred:
+          :source: notificationDeferred
+          :type: BOOLEAN
+        - issue_date:
+          :source: issueDate
+          :type: BIGINT
+        - playlist_id:
+          :source: playlistId
+          :type: TEXT
+        - artifact_id:
+          :source: artifactId
+          :type: TEXT
+        - badge_id:
+          :source: badgeId
+          :type: TEXT
+        - user_id:
+          :source: userId
+          :type: TEXT
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: badge_assertions
+    playlist:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - org_id:
+          :source: orgId
+          :type: TEXT
+        - slug: TEXT
+        - description: TEXT
+        - audience_min_age:
+          :source: audience.minAge
+          :type: INT
+        - audience_max_age:
+          :source: audience.maxAge
+          :type: INT
+        - audience_safe_search:
+          :source: audience.safeSearch
+          :type: BOOLEAN
+        - status: TEXT
+        - badge_id:
+          :source: badgeId
+          :type: TEXT
+        - name: TEXT
+        - national: BOOLEAN
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: playlists
+    city:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - name: TEXT
+        - slug: TEXT
+        - report_enabled:
+          :source: reportEnabled
+          :type: BOOLEAN
+        - report_passcode:
+          :source: reportPasscode
+          :type: TEXT
+        - hide: BOOLEAN
+        - defer_bulk_notifications:
+          :source: deferBulkNotifications
+          :type: BOOLEAN
+        - anchor_org_id:
+          :source: anchorOrgId
+          :type: TEXT
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: cities
+    user:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - username: TEXT
+        - city_id:
+          :source: cityId
+          :type: TEXT
+        - enabled: BOOLEAN
+        - role: TEXT
+        - firstname:
+          :source: name.first
+          :type: TEXT
+        - lastname:
+          :source: name.last
+          :type: TEXT
+        - email:
+          :source: contactInfo.email
+          :type: TEXT
+        - phone:
+          :source: contactInfo.phone
+          :type: TEXT
+        - dob:
+          :source: demographicInfo.dob
+          :type: TEXT
+        - zipcode:
+          :source: demographicInfo.zipcode
+          :type: TEXT
+        - gender:
+          :source: demographicInfo.gender
+          :type: TEXT
+        - ethnicity:
+          :source: demographicInfo.ethnicity
+          :type: TEXT
+        - delete_requested:
+          :source: deleteRequested
+          :type: BOOLEAN
+        - bulk_created:
+          :source: bulkCreated
+          :type: BOOLEAN
+        - is_pending:
+          :source: isPending
+          :type: BOOLEAN
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        - last_login_date:
+          :source: loginDetails.lastLoginTimestamp
+          :type: BIGINT
+        - login_count:
+          :source: loginDetails.loginCount
+          :type: BIGINT
+        :meta:
+          :table: users
+    artifact:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - user_id:
+          :source: userId
+          :type: TEXT
+        - org_id:
+          :source: orgId
+          :type: TEXT
+        - xp_id:
+          :source: xpRef.xpId
+          :type: TEXT
+        - xp_type:
+          :source: xpRef.xpType
+          :type: TEXT
+        - src: TEXT
+        - details: JSON
+        - title: TEXT
+        - media_type:
+          :source: mediaType
+          :type: TEXT
+        - content_type:
+          :source: contentType
+          :type: TEXT
+        - bulk_created:
+          :source: bulkCreated
+          :type: BOOLEAN
+        - notification_deferred:
+          :source: notificationDeferred
+          :type: BOOLEAN
+        - legacy_id:
+          :source: legacyId
+          :type: TEXT
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        - version: INT
+        :meta:
+          :table: artifacts
+    learner:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - org_id:
+          :source: orgId
+          :type: TEXT
+        - firstname:
+          :source: personalDetails.name.first
+          :type: TEXT
+        - lastname:
+          :source: personalDetails.name.last
+          :type: TEXT
+        - email:
+          :source: personalDetails.name.email
+          :type: TEXT
+        - status: TEXT
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: learners
+    learnerGroup:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - org_id:
+          :source: orgId
+          :type: TEXT
+        - name: TEXT
+        - description: TEXT
+        - creator_id:
+          :source: creatorId
+          :type: TEXT
+        - leader_ids:
+          :source: leaderIds
+          :type: JSON
+        - learner_ids:
+          :source: learnerIds
+          :type: JSON
+        - status: TEXT
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: learner_groups
+    org:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - city_id:
+          :source: cityId
+          :type: TEXT
+        - name: TEXT
+        - slug: TEXT
+        - zipcode: TEXT
+        - city_affiliation_hint:
+          :source: cityAffiliationHint
+          :type: TEXT
+        - primary_admin_id:
+          :source: primaryAdminId
+          :type: TEXT
+        - city_join_date:
+          :source: cityJoinDate
+          :type: BIGINT
+        - url: TEXT
+        - info: TEXT
+        - status: TEXT
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: orgs
+    rejectedOrg:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - name: TEXT
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: rejected_orgs
+    resource:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - name: TEXT
+        - src: TEXT
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: resources
+    xp:
+        :columns:
+        - id:
+          :source: _id
+          :type: TEXT
+        - org_id:
+          :source: orgId
+          :type: TEXT
+        - name: TEXT
+        - slug: TEXT
+        - description: TEXT
+        - type:
+          :source: type
+          :type: TEXT
+        - estimated_duration_in_minutes:
+          :source: estimatedDurationInMinutes
+          :type: INT
+        - national: BOOLEAN
+        - interest: TEXT
+        - submission_requirements:
+          :source: submissionRequirements
+          :type: TEXT
+        - participation_level:
+          :source: participationLevel
+          :type: TEXT
+        - audience_min_age:
+          :source: audience.minAge
+          :type: INT
+        - audience_max_age:
+          :source: audience.maxAge
+          :type: INT
+        - audience_safe_search:
+          :source: audience.safeSearch
+          :type: BOOLEAN
+        - status: TEXT
+        - creation_date:
+          :source: metadata.creationDate
+          :type: BIGINT
+        - last_update_date:
+          :source: metadata.lastUpdateDate
+          :type: BIGINT
+        :meta:
+          :table: xps
