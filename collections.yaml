@@ -144,22 +144,37 @@ lrng:
         - enabled: BOOLEAN
         - role: TEXT
         - firstname:
-          :source: personalDetails.name.first
+          :source: name.first
           :type: TEXT
         - lastname:
-          :source: personalDetails.name.last
+          :source: name.last
+          :type: TEXT
+        - email:
+          :source: contactInfo.email
+          :type: TEXT
+        - phone:
+          :source: contactInfo.phone
           :type: TEXT
         - dob:
-          :source: personalDetails.dob
+          :source: demographicInfo.dob
           :type: TEXT
         - zipcode:
-          :source: personalDetails.zipcode
+          :source: demographicInfo.zipcode
+          :type: TEXT
+        - gender:
+          :source: demographicInfo.gender
+          :type: TEXT
+        - ethnicity:
+          :source: demographicInfo.ethnicity
           :type: TEXT
         - delete_requested:
           :source: deleteRequested
           :type: BOOLEAN
         - bulk_created:
           :source: bulkCreated
+          :type: BOOLEAN
+        - is_pending:
+          :source: isPending
           :type: BOOLEAN
         - creation_date:
           :source: metadata.creationDate
@@ -168,10 +183,10 @@ lrng:
           :source: metadata.lastUpdateDate
           :type: BIGINT
         - last_login_date:
-          :source: loginInfo.lastLoginTimestamp
+          :source: loginDetails.lastLoginTimestamp
           :type: BIGINT
         - login_count:
-          :source: loginInfo.loginCount
+          :source: loginDetails.loginCount
           :type: BIGINT
         :meta:
           :table: users
