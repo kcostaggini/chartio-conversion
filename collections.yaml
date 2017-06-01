@@ -176,6 +176,9 @@ lrng:
         - is_pending:
           :source: isPending
           :type: BOOLEAN
+        - type:
+          :source: type
+          :type: TEXT
         - creation_date:
           :source: metadata.creationDate
           :type: BIGINT
