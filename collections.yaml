@@ -96,6 +96,15 @@ lrng:
           :type: TEXT
         - name: TEXT
         - national: BOOLEAN
+        - remix_date:
+          :source: remixInfo.date
+          :type: BIGINT
+        - remix_source_content_id:
+          :source: remixInfo.sourceContentId
+          :type: TEXT
+        - remix_original_content_id:
+          :source: remixInfo.originalContentId
+          :type: TEXT
         - creation_date:
           :source: metadata.creationDate
           :type: BIGINT
@@ -386,6 +395,15 @@ lrng:
           :source: audience.safeSearch
           :type: BOOLEAN
         - status: TEXT
+        - remix_date:
+          :source: remixInfo.date
+          :type: BIGINT
+        - remix_source_content_id:
+          :source: remixInfo.sourceContentId
+          :type: TEXT
+        - remix_original_content_id:
+          :source: remixInfo.originalContentId
+          :type: TEXT
         - creation_date:
           :source: metadata.creationDate
           :type: BIGINT
