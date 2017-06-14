@@ -96,6 +96,9 @@ lrng:
           :type: TEXT
         - name: TEXT
         - national: BOOLEAN
+        - publish_date:
+          :source: publishDate
+          :type: BIGINT
         - remix_date:
           :source: remixInfo.date
           :type: BIGINT
