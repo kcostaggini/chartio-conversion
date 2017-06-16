@@ -398,6 +398,9 @@ lrng:
           :source: audience.safeSearch
           :type: BOOLEAN
         - status: TEXT
+        - publish_date:
+          :source: publishDate
+          :type: BIGINT
         - remix_date:
           :source: remixInfo.date
           :type: BIGINT
