@@ -317,8 +317,8 @@ lrng:
         - city_affiliation_hint:
           :source: cityAffiliationHint
           :type: TEXT
-        - primary_admin_id:
-          :source: primaryAdminId
+        - public_contact_email:
+          :source: publicContactEmail
           :type: TEXT
         - city_join_date:
           :source: cityJoinDate
