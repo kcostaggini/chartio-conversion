@@ -320,6 +320,9 @@ lrng:
         - public_contact_email:
           :source: publicContactEmail
           :type: TEXT
+        - primary_contact_email:
+          :source: primaryContactInfo.email
+          :type: TEXT
         - city_join_date:
           :source: cityJoinDate
           :type: BIGINT
